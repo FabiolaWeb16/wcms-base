@@ -14,8 +14,8 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div id="primary" class="content-area row">
+		<main id="main" class="site-main col-md-9" role="main"><!--creating a class to divide the "main content" with the "sidebar" in a same container but in different sections-->
 
 		<?php
 		if ( have_posts() ) :
@@ -49,8 +49,14 @@ get_header(); ?>
 		endif; ?>
 
 		</main><!-- #main -->
+
+		<div class= "col-md-3"><!--creating a section for the "sidebar" independent from the "main" section-->
+			<?php 
+				get_sidebar();
+			 ?>
+		</div>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+
 get_footer();

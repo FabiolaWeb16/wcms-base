@@ -1,0 +1,44 @@
+.slider-text{
+	font: italic 14px Georgia, serif;
+    position: relative;
+    color: #333;
+    text-align: center;
+    margin: 8px 18px 8px 24px;
+}
+
+.slider-text h2{
+	text-align: center;
+}
+.site-header{
+	margin-bottom: 20px;
+}
+
+//Editing the footer. The center position of the text must be fixed in "footer.php"
+.site-footer{
+	margin-top: 30px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: black;
+	color: white;
+}
+
+//Making the text on the "footer"centered
+footer#colophon .container{
+	text-align: center;
+}
+
+//Adding my own style to the sidebar sub-titles
+.widget-title{
+	font-size: 22px;
+}
+
+//justifying the text of my page cause I like it!
+.entry-content p{
+	text-align: justify;
+}
+
+//Making the title om the pages unvisible and tiny so that it doesn't show.
+.entry-header .entry-title{
+	font-size: 1px;
+	visibility: hidden;
+}

@@ -7,6 +7,8 @@
  * @package WCMS_Base_Theme
  */
 
+require "inc/wp-bootstrap-navwalker.php";
+
 if ( ! function_exists( 'wcms_base_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -107,14 +109,22 @@ add_action( 'widgets_init', 'wcms_base_widgets_init' );
 function wcms_base_scripts() {
 	wp_enqueue_style( 'wcms-base-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'wcms-base-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'wcms-base-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+//Deregistering the Jquery scripts from WordPress and loading a new one!
+	wp_deregister_script('jquery');
+	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/inc/jquery-3.2.0/jquery-3.2.0.min.js', array(), '3.2.0', true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
+//Loading Tether
+	wp_enqueue_script('tether', get_template_directory_uri() . '/inc/tether/tether.min.js', array('jquery'), '', true);
+
+//Loading Bootstrap scripts but the "jquery" and the "tether" files must be loaded before this.
+	wp_enqueue_script( 'bootstrap4', get_template_directory_uri() . '/inc/bootstrap-4.0.0-alpha.6/dist/js/bootstrap.min.js', array('jquery', 'tether'), '4.0.0-alpha.6', true );
+
+	if (is_singular() && comments_open() && get_option('tread_comments')){
+		wp_enqueue_script('comment-reply');
 	}
 }
+
 add_action( 'wp_enqueue_scripts', 'wcms_base_scripts' );
 
 /**

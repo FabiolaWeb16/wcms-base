@@ -9,8 +9,8 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div id="primary" class="content-area row"><!--adding a row for the sidebar-->
+		<main id="main" class="site-main col-md-9" role="main">
 
 		<?php
 		while ( have_posts() ) : the_post();
@@ -28,8 +28,13 @@ get_header(); ?>
 		?>
 
 		</main><!-- #main -->
+		<div class= col-md-3> <!--moving the sidebar to the right instead of "main" location-->
+		<?php 
+			get_sidebar();
+		 ?>
+		</div>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+
 get_footer();

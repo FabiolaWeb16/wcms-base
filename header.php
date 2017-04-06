@@ -18,32 +18,41 @@
 
 <?php wp_head(); ?>
 </head>
-
+<!--Adding a container to the top-->
 <body <?php body_class(); ?>>
+
+</div>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wcms-base' ); ?></a>
+	<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'wcms-base' ); ?></a><!--adding the class "sr-only" to hide the "skip content" in this screenreader-->
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
-
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'wcms-base' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
+		<div class= "slider-text">
+			<h2>text</h2>
+		</div>
+		<?php 
+			echo do_shortcode('[smartslider3 slider=2]');
+		?>
+		<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse"><!--Adding the Bootstrap 4's nav walker-->
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class= "container">
+			<a class="navbar-brand" href="#"><?php bloginfo('name'); ?></a>
+				<?php
+					wp_nav_menu( array(
+						'theme_location'	=> 'menu-1',
+						'container'			=> 'div',
+						'container_class'	=> 'collapse navbar-collapse',
+						'container_id'      => 'navbarCollapse',
+						'menu_class'		=> 'nav navbar-nav mr-auto ml-auto',
+						'fallback_cb'		=> '__return_false',
+						'items_wrap'		=> '<ul id="%1$s" class="%2$s">%3$s</ul>',
+						'depth'				=> 2,
+						'walker'			=> new bootstrap_4_walker_nav_menu()
+					) );
+				?>
+			</div>
+		</nav>
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+	<div id="content" class="site-content container"><!--lägger en container för att det ska bli en liten white space vid sidorna-->

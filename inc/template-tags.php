@@ -66,15 +66,19 @@ function wcms_base_entry_footer() {
 		echo '</span>';
 	}
 
-	edit_post_link(
+	/*
+	//Edit "..this page" is deleted from the whole theme now!
+	edit_post_link(  
 		sprintf(
-			/* translators: %s: Name of current post */
+			translators: %s: Name of current post (this is a comment)
 			esc_html__( 'Edit %s', 'wcms-base' ),
 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		),
 		'<span class="edit-link">',
 		'</span>'
-	);
+	); 
+	*/
+
 }
 endif;
 

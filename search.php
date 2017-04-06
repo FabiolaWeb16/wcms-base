@@ -9,8 +9,8 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<section id="primary" class="content-area row">
+		<main id="main" class="site-main col-md-9" role="main">
 
 		<?php
 		if ( have_posts() ) : ?>
@@ -41,8 +41,15 @@ get_header(); ?>
 		endif; ?>
 
 		</main><!-- #main -->
+
+		<div class= col-md-3> <!--Adding the sidebar in the right side of the "sidebar"-->
+		<?php
+			get_sidebar();
+		?>
+		</div>
+
 	</section><!-- #primary -->
 
 <?php
-get_sidebar();
+
 get_footer();
