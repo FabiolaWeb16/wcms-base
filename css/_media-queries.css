@@ -1,0 +1,29 @@
+@media only screen and (max-width: 750px) {
+  .slider-text {
+    height: 7vh;
+    width: 10vw;
+    background-color: white; } }
+
+@media only screen and (max-width: 750px) {
+  .slider-text h2 {
+    font-size: 12px; } }
+
+@media only screen and (max-width: 550px) {
+  .slider-text {
+    height: 7vh;
+    width: 11vw; } }
+
+@media only screen and (max-width: 550px) {
+  .slider-text h2 {
+    font-size: 10px;
+    padding: 1px 1px 1px; } }
+
+@media only screen and (max-width: 300px) {
+  .slider-text {
+    height: 6vh;
+    width: 12vw; } }
+
+@media only screen and (max-width: 300px) {
+  .slider-text h2 {
+    font-size: 8px;
+    padding: 1px 1px 1px; } }

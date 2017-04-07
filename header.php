@@ -27,7 +27,7 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class= "slider-text">
-			<h2>text</h2>
+			<h2></h2><!--maybe a text here?-->
 		</div>
 		<?php 
 			echo do_shortcode('[smartslider3 slider=2]');
