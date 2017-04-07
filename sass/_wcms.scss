@@ -80,6 +80,11 @@ footer#colophon .container{
  	font-weight: bold;
  }
 
+*, *::before, *::after {
+    box-sizing: inherit;
+    text-align: center;
+}
+
 
 
 

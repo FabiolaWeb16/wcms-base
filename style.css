@@ -6927,6 +6927,10 @@ footer#colophon .container {
   color: grey;
   font-weight: bold; }
 
+*, *::before, *::after {
+  box-sizing: inherit;
+  text-align: center; }
+
 /*--------------------------------------------------------------
 # Adding wp-deafult.scss to modify more"styles";
 --------------------------------------------------------------*/

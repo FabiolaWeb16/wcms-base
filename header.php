@@ -27,7 +27,7 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class= "slider-text">
-			<h2></h2><!--maybe a text here?-->
+			<h2>text</h2>
 		</div>
 		<?php 
 			echo do_shortcode('[smartslider3 slider=2]');
@@ -37,7 +37,7 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class= "container">
-			<a class="navbar-brand" href="#"><?php bloginfo('name'); ?></a>
+			<a class="navbar-brand" href="#"><?php bloginfo(''); ?></a>
 				<?php
 					wp_nav_menu( array(
 						'theme_location'	=> 'menu-1',
