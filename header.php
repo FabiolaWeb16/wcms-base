@@ -26,8 +26,11 @@
 	<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'wcms-base' ); ?></a><!--adding the class "sr-only" to hide the "skip content" in this screenreader-->
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class= "slider-text">
-			<h2>text</h2>
+		<div class= "slider-logo">
+			<div class= "logo">
+				<?php 	?>
+
+			</div>
 		</div>
 		<?php 
 			echo do_shortcode('[smartslider3 slider=2]');
@@ -51,6 +54,9 @@
 						'walker'			=> new bootstrap_4_walker_nav_menu()
 					) );
 				?>
+			</div>
+			<div class= "search-form-container">
+				<?php get_search_form(); ?>
 			</div>
 		</nav>
 	</header><!-- #masthead -->

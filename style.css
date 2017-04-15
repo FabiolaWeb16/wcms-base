@@ -6865,16 +6865,6 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 /*--------------------------------------------------------------
 # Adding wcms.scss to modify some own "styles";
 --------------------------------------------------------------*/
-.slider-text {
-  font: italic 14px Georgia, serif;
-  position: relative;
-  color: #333;
-  text-align: center;
-  margin: 8px 18px 8px 24px; }
-
-.slider-text h2 {
-  text-align: center; }
-
 .site-header {
   margin-bottom: 20px;
   background-color: red; }
@@ -6899,22 +6889,16 @@ footer#colophon .container {
   font-size: 1px;
   visibility: hidden; }
 
-.slider-text {
+.slider-logo {
   position: absolute;
   background-image: url("https://alpackakoncept.se/wcms-base/wp-content/themes/wcms-base/img/logo/logo_1.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   height: 17vh;
   width: 12vw;
+  margin-top: 10px;
   margin-left: 10px;
   z-index: 3; }
-
-.slider-text h2 {
-  position: absolute;
-  color: grey;
-  font-size: 2em;
-  z-index: 4;
-  padding: 4px 4px 2px; }
 
 .bg-inverse {
   background-color: #dc0e08 !important; }
@@ -6930,6 +6914,30 @@ footer#colophon .container {
 *, *::before, *::after {
   box-sizing: inherit;
   text-align: center; }
+
+.pt-cv-wrapper .btn-success {
+  color: white;
+  background-color: black;
+  border-color: #292b2c; }
+
+/* unvisited link */
+a:link {
+  color: red; }
+
+/* visited link */
+a:visited {
+  color: blue; }
+
+/* mouse over link */
+a._self .pt-cv-readmore .btn:hover {
+  color: red; }
+
+/* selected link */
+a:active {
+  color: yellow; }
+
+a._self {
+  color: red; }
 
 /*--------------------------------------------------------------
 # Adding wp-deafult.scss to modify more"styles";
@@ -7046,40 +7054,49 @@ object {
 /*--------------------------------------------------------------
 # Adding wp-deafult.scss to modify more"styles";
 --------------------------------------------------------------*/
-@media only screen and (max-width: 750px) {
-  .slider-text {
-    height: 7vh;
-    width: 10vw;
-    background-color: white; } }
+/*@media only screen and (max-width: 750px) {
+    .slider-text {
+    	height: 7vh;
+    	width: 10vw;
+        background-color: white;
+    }
+}
+*/
+@media only screen and (min-width: 750px) and (max-width: 1250px) {
+  /*h3#n2-ss-2item1 .n2-ow{
+        padding-left: 20px;
+    }
+  /* .entry-content h1{
+        font-size: 40px;
+        font-weight: bold;
+        }
+    .entry-content h3{
+        font-size: 40px;
+        font-weight: bold;
+        color: grey;
+    } */
+  footer#colophon .container {
+    font-size: 12px; }
+  .site-footer {
+    padding-top: 8px;
+    padding-bottom: 8px; } }
 
-@media only screen and (max-width: 750px) {
-  .slider-text h2 {
-    font-size: 12px; } }
+@media only screen and (min-width: 450px) and (max-width: 750px) {
+  /*h3#n2-ss-2item1 .n2-ow{
+        padding-left: 20px;
+    }*/
+  footer#colophon .container {
+    font-size: 12px; }
+  .site-footer {
+    padding-top: 6px;
+    padding-bottom: 6px; } }
 
-@media only screen and (max-width: 550px) {
-  .slider-text {
-    height: 6vh;
-    width: 10vw; } }
-
-@media only screen and (max-width: 550px) {
-  .slider-text h2 {
-    font-size: 10px;
-    height: 10vh;
-    padding: 1px 1px 1px; } }
-
-@media only screen and (max-width: 300px) {
-  .slider-text {
-    height: 4vh;
-    width: 12vw; } }
-
-@media only screen and (max-width: 300px) {
-  .slider-text h2 {
-    font-size: 8px;
-    padding: 1px 1px 1px; }
-  .entry-content h1 {
-    font-size: 22px;
-    font-weight: bold; }
-  .entry-content h3 {
-    font-size: 20px;
-    font-weight: bold;
-    color: grey; } }
+@media only screen and (min-width: 250px) and (max-width: 550px) {
+  /*h3#n2-ss-2item1 .n2-ow{
+        padding-left: 10px;
+    }*/
+  footer#colophon .container {
+    font-size: 10px; }
+  .site-footer {
+    padding-top: 2px;
+    padding-bottom: 2px; } }

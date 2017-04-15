@@ -7,6 +7,7 @@
  * @package WCMS_Base_Theme
  */
 
+require "sass/typography/fonts.php";
 require "inc/wp-bootstrap-navwalker.php";
 
 if ( ! function_exists( 'wcms_base_setup' ) ) :
@@ -17,6 +18,8 @@ if ( ! function_exists( 'wcms_base_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
+
+
 function wcms_base_setup() {
 	/*
 	 * Make theme available for translation.
@@ -151,3 +154,13 @@ require get_template_directory() . '/inc/customizer.php'; //man kan gå genom ut
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+//Adding "theme-support" for my "serch-form" is going to be "nicer"
+add_theme_support('HTML5', array('search-form'));
+
+//Addin a filter to avoid "bad words" ;-)
+function filter_profanity( $content ) {
+	$profanities = array('badword','alsobad','...');
+	$content = str_ireplace( $profanities, '{censored}', $content );
+	return $content;
+}

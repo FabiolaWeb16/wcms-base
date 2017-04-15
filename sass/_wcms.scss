@@ -1,14 +1,6 @@
-.slider-text{
-	font: italic 14px Georgia, serif;
-    position: relative;
-    color: #333;
-    text-align: center;
-    margin: 8px 18px 8px 24px;
-}
 
-.slider-text h2{
-	text-align: center;
-}
+
+
 .site-header{
 	margin-bottom: 20px;
 	background-color: red;
@@ -44,24 +36,17 @@ footer#colophon .container{
 	visibility: hidden;
 }
 
-//Styling  the created text on the "carousel"
-.slider-text{
+//Styling  the created logo on the "carousel"
+.slider-logo{
     position: absolute;
     background-image: url("https://alpackakoncept.se/wcms-base/wp-content/themes/wcms-base/img/logo/logo_1.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
     height: 17vh;
     width: 12vw;
+    margin-top: 10px;
     margin-left: 10px;
     z-index: 3;
-}
-
-.slider-text h2{
-	position: absolute;
-	color: grey;
-	font-size: 2em;
-	z-index: 4;
-	padding: 4px 4px 2px;
 }
 
 //changing the background color of the nav walker:
@@ -83,6 +68,37 @@ footer#colophon .container{
 *, *::before, *::after {
     box-sizing: inherit;
     text-align: center;
+}
+
+.pt-cv-wrapper .btn-success {
+	color: white;
+    background-color: black;
+    border-color: #292b2c;
+}
+
+
+	 /* unvisited link */
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: blue;
+}
+
+/* mouse over link */
+a._self .pt-cv-readmore .btn:hover {
+    color: red;
+}
+
+/* selected link */
+a:active {
+    color: yellow;
+} 
+
+a._self{
+	color: red;
 }
 
 

@@ -34,5 +34,6 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
+
 //Deleting the sidebar for not to be shown on "single pages".
 get_footer();
